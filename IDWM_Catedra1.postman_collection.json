@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "3cc5d621-3e0e-40ad-899f-592c47f6b98b",
+		"name": "IDWM_Catedra1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27148180"
+	},
+	"item": [
+		{
+			"name": "GetEBooks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/ebook?genre={genre1}&author={author1}&format={format1}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "{genre1}"
+						},
+						{
+							"key": "author",
+							"value": "{author1}"
+						},
+						{
+							"key": "format",
+							"value": "{format1}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateEBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"ebook1\",\r\n    \"author\": \"author1\",\r\n    \"genre\": \"genre1\",\r\n    \"format\": \"format1\",\r\n    \"price\": 1900\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateEBook",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"ebook_change1\",\r\n    \"author\": \"author_change1\",\r\n    \"genre\": \"genre_change1\",\r\n    \"format\": \"format_change1\",\r\n    \"price\": 3500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChangeAvailability",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isavailable\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/1/change-availability",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						"1",
+						"change-availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChangeStock",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"stock\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/1/increment-stock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						"1",
+						"increment-stock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PurchaseEBook",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"amount\": 10,\r\n    \"price\": 950000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/purchase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteEBook",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
